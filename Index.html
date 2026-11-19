@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maison Aurelle | Member Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+
+    <aside class="brand">
+      <div class="arcs" aria-hidden="true"></div>
+      <div class="mark"><span>A</span></div>
+      <div class="brand-copy">
+        <h1>Maison Aurelle</h1>
+        <p>Private access to the atelier. Sign in to view your commissions, appointments and saved pieces.</p>
+      </div>
+      <small>Est. 1894 &middot; Geneva</small>
+    </aside>
+
+    <section class="panel">
+      <div class="tabs" role="tablist">
+        <button class="tab active" id="tabLogin" role="tab" aria-selected="true">Sign in</button>
+        <button class="tab" id="tabSignup" role="tab" aria-selected="false">Create account</button>
+        <span class="tab-bar" id="tabBar"></span>
+      </div>
+
+      <!-- LOGIN -->
+      <form id="loginForm" class="form" novalidate>
+        <h2>Welcome back</h2>
+        <p class="sub">Enter your details to continue.</p>
+
+        <div class="field">
+          <input id="loginEmail" name="email" type="email" placeholder=" " autocomplete="email" data-rule="email">
+          <label for="loginEmail">Email address</label>
+          <span class="msg" aria-live="polite"></span>
+        </div>
+
+        <div class="field">
+          <input id="loginPass" name="password" type="password" placeholder=" " autocomplete="current-password" data-rule="required">
+          <label for="loginPass">Password</label>
+          <button type="button" class="eye" aria-label="Show password">Show</button>
+          <span class="msg" aria-live="polite"></span>
+        </div>
+
+        <div class="row">
+          <label class="check"><input type="checkbox" id="remember"><i></i>Keep me signed in</label>
+          <a href="#" class="link" id="forgot">Forgot password?</a>
+        </div>
+
+        <div class="alert" id="loginAlert" role="alert" hidden></div>
+        <button class="cta" type="submit"><span>Sign in</span></button>
+      </form>
+
+      <!-- SIGN UP -->
+      <form id="signupForm" class="form" novalidate hidden>
+        <h2>Request membership</h2>
+        <p class="sub">Create your account in under a minute.</p>
+
+        <div class="field">
+          <input id="name" type="text" placeholder=" " autocomplete="name" data-rule="name">
+          <label for="name">Full name</label>
+          <span class="msg" aria-live="polite"></span>
+        </div>
+
+        <div class="field">
+          <input id="signEmail" type="email" placeholder=" " autocomplete="email" data-rule="email">
+          <label for="signEmail">Email address</label>
+          <span class="msg" aria-live="polite"></span>
+        </div>
+
+        <div class="field">
+          <input id="phone" type="tel" placeholder=" " autocomplete="tel" data-rule="phone">
+          <label for="phone">Phone number</label>
+          <span class="msg" aria-live="polite"></span>
+        </div>
+
+        <div class="field">
+          <input id="signPass" type="password" placeholder=" " autocomplete="new-password" data-rule="password">
+          <label for="signPass">Password</label>
+          <button type="button" class="eye" aria-label="Show password">Show</button>
+          <span class="msg" aria-live="polite"></span>
+          <div class="meter" aria-hidden="true"><b></b><b></b><b></b><b></b><em id="meterText">Add a password</em></div>
+        </div>
+
+        <div class="field">
+          <input id="confirm" type="password" placeholder=" " autocomplete="new-password" data-rule="confirm">
+          <label for="confirm">Confirm password</label>
+          <span class="msg" aria-live="polite"></span>
+        </div>
+
+        <div class="field terms">
+          <label class="check"><input type="checkbox" id="terms" data-rule="terms"><i></i>I agree to the Terms and Privacy Policy</label>
+          <span class="msg" aria-live="polite"></span>
+        </div>
+
+        <button class="cta" type="submit"><span>Create account</span></button>
+      </form>
+
+      <!-- SUCCESS -->
+      <div id="welcome" class="form welcome" hidden>
+        <div class="seal">&#10003;</div>
+        <h2 id="welcomeTitle">Welcome</h2>
+        <p class="sub" id="welcomeText"></p>
+        <button class="cta" id="logout" type="button"><span>Sign out</span></button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
